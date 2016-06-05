@@ -1,0 +1,12 @@
+#lang scheme
+
+(define nand
+  (lambda (a b)
+    (cond
+      [a (not b)]
+      [else #t])))
+
+(nand #t #t)
+(nand #t #f)
+(nand #f #t)
+(nand #f #f)
