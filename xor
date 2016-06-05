@@ -1,0 +1,12 @@
+#lang scheme
+
+(define xor
+  (lambda (a b)
+    (cond
+      [(equal? a b) #f]
+      [else #t])))
+
+(xor #t #t)
+(xor #t #f)
+(xor #f #t)
+(xor #f #f)
