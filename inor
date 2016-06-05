@@ -1,0 +1,12 @@
+#lang scheme
+
+(define inor
+  (lambda (a b)
+    (cond
+      [a a]
+      [else b])))
+
+(inor #t #t)
+(inor #t #f)
+(inor #f #t)
+(inor #f #f)
