@@ -1,0 +1,12 @@
+#lang scheme
+
+(define imp
+  (lambda (a b)
+    (cond
+      [a b]
+      [else #t])))
+
+(imp #t #t)
+(imp #t #f)
+(imp #f #t)
+(imp #f #f)
