@@ -1,0 +1,10 @@
+#lang scheme
+
+(define iff
+  (lambda (a b)
+    (equal? a b)))
+
+(iff #t #t)
+(iff #t #f)
+(iff #f #t)
+(iff #f #f)
