@@ -1,0 +1,35 @@
+#lang scheme
+(require htdp/docs)
+(define imp
+  (lambda (a b)
+    (cond
+      [a b]
+      [else #t])))
+(define iff
+  (lambda (a b)
+    (equal? a b)))
+
+-
+(atom? '())
+-
+(xor (null? '()) (atom? '()))
+(xor #t (null? '()))
+(not (xor (xor (xor #t #t) #t) #t))
+-
+(or (atom? '()) (atom? 'Fred))
+(or (not #t) (not #f))
+(or (xor #t #t) (or #f #f))
+(not (or (not (null? (first '(())))) (atom? '(Fred))))
+-
+(and (not (or #t #f)) #t)
+(and (not #t) (not #t))
+(not (xor (and #t (not #t)) #t))
+(and (and #t #t) (not #t))
+-
+(and (imp #t #f) #t)
+(iff (not (and #t #t)) (nor #f #f))
+(not (not (not (nand #t #f))))
+(nand (or #t #f) (xor #t #t))
+(imp (or (not #t) (not #f)) (nand #t #f))
+
+
