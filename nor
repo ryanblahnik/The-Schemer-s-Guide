@@ -1,0 +1,12 @@
+#lang scheme
+
+(define nor
+  (lambda (a b)
+    (cond
+      [(equal? a b) (not a)]
+      [else #f])))
+
+(nor #t #t)
+(nor #t #f)
+(nor #f #t)
+(nor #f #f)
