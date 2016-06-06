@@ -1,0 +1,18 @@
+#lang scheme
+
+(define s '(a b c d e))
+s
+
+(null? s)
+(null? (first s))
+(null? (first (rest s)))
+(null? (rest (rest (rest (rest (rest s))))))
+
+'((()))
+'(()()())
+
+(define r '(a b c))
+r
+(cons s r)
+(cons r (cons s r))
+(cons (cons s s) (cons s (cons s s)))
