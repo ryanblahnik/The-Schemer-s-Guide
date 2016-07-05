@@ -1,0 +1,8 @@
+#lang scheme
+(require htdp/docs)
+
+(define atomorlist
+  (lambda (s)
+    (cond
+      [(atom? s) `atom]
+      [else `list])))
