@@ -1,0 +1,9 @@
+#lang scheme
+(require htdp/docs)
+
+(define loaf
+  (lambda (a b c)
+    (cond
+      [(and a b) (xor (and a b) c)]
+      [(xor a b) (and (xor a b) c)]
+      [else (xor a b)])))
