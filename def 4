@@ -1,0 +1,8 @@
+#lang scheme
+(require htdp/docs)
+
+(define firnd
+  (lambda (a b c)
+    (cond
+      [(nor b c) (first a)]
+      [else (second a)]
