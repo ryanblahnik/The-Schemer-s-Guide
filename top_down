@@ -1,0 +1,32 @@
+#lang scheme
+(require htdp/docs)
+
+(define bothnull?
+  (lambda (a b)
+    (and (null? a) (null? b))))
+
+(define bnonull?
+  (lambda (a b)
+    (nor (null? a) (null? b))))
+
+(define headscombine
+  (lambda (a b)
+    (cons (first a) (cons (first b) `()))))
+
+(define headshelp2
+  (lambda (a b)
+    (cond
+      [(null? a) (first b)]
+      [else (first a)])))
+
+(define headshelp1
+  (lambda (a b)
+    (cond
+      [(bnonull? a b) (headscombine a b)]
+      [else (headshelp2 a b)])))
+  
+(define heads
+  (lambda (a b)
+    (cond
+      [(bothnull? a b) `()]
+      [else (headshelp1 a b)])))
