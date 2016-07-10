@@ -1,0 +1,20 @@
+#lang scheme
+(require htdp/docs)
+
+(define cc3
+  (lambda (a b)
+    (cond
+      [(atom? a) (cons a b)]
+      [else (cons b a)])))
+
+(define cc2
+  (lambda (a b)
+    (cond
+      [(nor (atom? a) (atom? b)) (cons b a)]
+      [else (cc3 a b)])))
+
+(define cchk
+  (lambda (a b)
+    (cond
+      [(and (atom? a) (atom? b)) (cons a (cons b `()))]
+      [else (cc2 a b)])))
