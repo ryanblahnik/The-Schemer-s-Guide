@@ -1,0 +1,9 @@
+#lang scheme
+(require htdp/docs)
+
+(define member?
+  (lambda (a s)
+    (cond
+      [(null? s) #f]
+      [(equal? (first s) a) #t]
+      [else (member? a (rest s))])))
