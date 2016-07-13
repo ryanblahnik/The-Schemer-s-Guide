@@ -1,0 +1,9 @@
+#lang scheme
+(require htdp/docs)
+
+(define lili?
+  (lambda (a)
+    (cond
+      [(null? a) #t]
+      [(atom? (first a)) #f]
+      [else (lili? (rest a))])))
