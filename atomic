@@ -1,0 +1,8 @@
+#lang scheme
+(require htdp/docs)
+
+(define atomic?
+  (lambda (a)
+    (cond
+      [(null? a) #t]
+      [else (atom? a)])))
