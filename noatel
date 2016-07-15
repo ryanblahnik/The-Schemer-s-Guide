@@ -1,0 +1,10 @@
+#lang scheme
+(require htdp/docs)
+
+(define noatel?
+  (lambda (a)
+    (cond
+      [(null? a) #t]
+      [(atom? (first a)) #f]
+      [(null? (first a)) #f]
+      [else (noatel? (rest a))])))
