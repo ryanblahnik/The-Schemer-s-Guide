@@ -1,0 +1,9 @@
+#lang scheme
+(require htdp/docs)
+
+(define onlyn?
+  (lambda (a)
+    (cond
+      [(null? a) #t]
+      [(not (null? (first a))) #f]
+      [else (onlyn? (rest a))])))
