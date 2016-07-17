@@ -1,0 +1,21 @@
+#lang scheme
+(require htdp/docs)
+
+(first '(a b c d e))
+
+(define second
+  (lambda (l)
+    (first (rest l))))
+
+(second '(a b c d e))
+
+(define atom-or-list
+  (lambda (a)
+    (cond
+      [(atom? a) 'atom]
+      [else 'list])))
+
+(atom-or-list 'Fred)
+(atom-or-list '(a b c d e))
+
+exit
